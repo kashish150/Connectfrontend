@@ -23,7 +23,7 @@ const Register = ({setAlert,register})=>{
         const [password,setpassword]=useState('');
         const history =useHistory(); 
         function senddata(){
-            axios.post("http://localhost:4000/api/users/u",{
+            axios.post("https://letsconnectsocialapinodejs.herokuapp.com/api/users/u",{
             name:name,   
             email:email,
                 password:password

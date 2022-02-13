@@ -17,7 +17,7 @@ function Login(){
     console.log("send");
     console.log(email);
     console.log(password);
-    axios.post("http://localhost:4000/api/auth/",{
+    axios.post("https://letsconnectsocialapinodejs.herokuapp.com/api/auth/",{
         email:email,
         password:password
       }).then((res)=>{

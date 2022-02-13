@@ -14,7 +14,7 @@ function Posts(){
   const [postdata,setpostdata]=useState('');   
   axios.defaults.headers.common["x-auth-token"] = token;
   useEffect(() => {
-    axios.get("http://localhost:4000/api/posts/").then((res)=>{
+    axios.get("https://letsconnectsocialapinodejs.herokuapp.com/api/posts/").then((res)=>{
     setpostdata(res.data);
 
  },(err)=>{console.log(err);})
@@ -23,7 +23,7 @@ function Posts(){
  async  function deletepost(id){
   var token=JSON.parse(localStorage.getItem('token'))
   axios.defaults.headers.common["x-auth-token"] = token;
-  axios.delete(`http://localhost:4000/api/posts/${id}`).then((res)=>{
+  axios.delete(`https://letsconnectsocialapinodejs.herokuapp.com/api/posts/${id}`).then((res)=>{
 us(s+'b');
     },(err)=>{console.log(err);})
 
@@ -31,7 +31,7 @@ us(s+'b');
   async  function senddata  (){
     var token=JSON.parse(localStorage.getItem('token'))
     axios.defaults.headers.common["x-auth-token"] = token;
-    axios.post("http://localhost:4000/api/posts/", {
+    axios.post("https://letsconnectsocialapinodejs.herokuapp.com/api/posts/", {
     "text":post
   }).then((res)=>{
   us(s+'b');
@@ -42,7 +42,7 @@ us(s+'b');
   async  function like (id){
     var token=JSON.parse(localStorage.getItem('token'))
     axios.defaults.headers.common["x-auth-token"] = token;
-    axios.put(`http://localhost:4000/api/posts/like/${id}`).then((res)=>{
+    axios.put(`https://letsconnectsocialapinodejs.herokuapp.com/api/posts/like/${id}`).then((res)=>{
   us(s+'b');
       },(err)=>{alert("Post already liked")})
 
@@ -50,7 +50,7 @@ us(s+'b');
   async  function unlike (id){
     var token=JSON.parse(localStorage.getItem('token'))
     axios.defaults.headers.common["x-auth-token"] = token;
-    axios.put(`http://localhost:4000/api/posts/unlike/${id}`).then((res)=>{
+    axios.put(`https://letsconnectsocialapinodejs.herokuapp.com/api/posts/unlike/${id}`).then((res)=>{
 
   us(s+'b');
       },(err)=>{alert("Post already unliked")})
@@ -59,7 +59,7 @@ us(s+'b');
   async  function commentsenddata(id){
     var token=JSON.parse(localStorage.getItem('token'))
     axios.defaults.headers.common["x-auth-token"] = token;
-    axios.post(`http://localhost:4000/api/posts/comment/${id}`, {
+    axios.post(`https://letsconnectsocialapinodejs.herokuapp.com/api/posts/comment/${id}`, {
     "text":comment
   }).then((res)=>{
   console.log(res.data)
